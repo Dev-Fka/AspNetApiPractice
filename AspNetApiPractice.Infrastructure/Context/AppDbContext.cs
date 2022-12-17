@@ -11,14 +11,21 @@ namespace AspNetApiPractice.Infrastructure.Context
 {
     public class AppDbContext : DbContext
     {
-
-        public DbSet<User>? Products { get; set; }
-        public DbSet<Product>? Categories { get; set; }
+        public AppDbContext(DbContextOptions<AppDbContext> opt) :base(opt) { }
+        
+        public DbSet<Users>? Users { get; set; }
+        public DbSet<Product>? Products { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //optionsBuilder.UseSqlServer(@"Data Source=./DEV-FKA;Database=AspNetPractice;Integrated Security=SSPI;");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
 
         }
+
 
     }
 }
