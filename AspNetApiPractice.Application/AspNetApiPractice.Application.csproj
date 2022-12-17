@@ -7,8 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstraction\" />
     <Folder Include="Exceptions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AspNetApiPractice.Domain\AspNetApiPractice.Domain.csproj" />
   </ItemGroup>
 
 </Project>

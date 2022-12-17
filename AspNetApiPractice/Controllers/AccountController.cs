@@ -1,21 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetApiPractice.Infrastructure.UnitOfWork;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetApiPractice.Controllers
 {
     public class AccountController : ControllerBase
-    {
-
-        public AccountController()
+    {   
+        private readonly IUnitOfWork unitOfWork;
+        public AccountController(IUnitOfWork unitOfWork)
         {
-
+            this.unitOfWork = unitOfWork;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> CreateUser([FromBody] string mail,string password)
+        {
 
-        public async Task<IActionResult> CreateUser()
-        {   
-
-
-          return Ok(true);
+          return Ok(await unitOfWork.UserRepository.AddUserAsync(mail, password));
 
         }
     }

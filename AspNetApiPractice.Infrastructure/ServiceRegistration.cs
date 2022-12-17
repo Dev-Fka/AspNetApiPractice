@@ -1,4 +1,8 @@
-﻿using AspNetApiPractice.Infrastructure.Context;
+﻿using AspNetApiPractice.Application.Abstraction;
+using AspNetApiPractice.Domain.Entities;
+using AspNetApiPractice.Infrastructure.Context;
+using AspNetApiPractice.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +24,11 @@ namespace AspNetApiPractice.Infrastructure
             opt.UseSqlServer(configuration.GetConnectionString("ConnectionString"))
 
             );
+            service.AddSingleton<IUserRepository, UserRepository>();
+            service.AddSingleton<UserManager<User>>();
+            service.AddSingleton<IProductRepository, ProductRepository>();
+            
+            
         }
 
     }
