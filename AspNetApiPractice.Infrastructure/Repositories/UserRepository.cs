@@ -15,13 +15,13 @@ namespace AspNetApiPractice.Infrastructure.Repositories
     public class UserRepository : Repository<User> ,IUserRepository
     {
         private UserManager<User> UserManager { get; set; }
-        private SignInManager<User> signInManager { get; set; }
+       // private SignInManager<User> signInManager { get; set; }
 
         public AppDbContext context;
-        public UserRepository(AppDbContext context, UserManager<User> userManager, SignInManager<User> signInManager) :base(context) {
+        public UserRepository(AppDbContext context, UserManager<User> userManager) :base(context) {
             this.context = context;
             this.UserManager = userManager;
-            this.signInManager = signInManager;
+            //this.signInManager = signInManager;
             
         }
 
@@ -30,7 +30,8 @@ namespace AspNetApiPractice.Infrastructure.Repositories
 
             User newUser = new()
             {
-                Email= mail
+                Email= mail,
+                UserName = mail
             };
 
             UserValidator validator = new();

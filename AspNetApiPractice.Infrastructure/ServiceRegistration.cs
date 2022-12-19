@@ -2,6 +2,7 @@
 using AspNetApiPractice.Domain.Entities;
 using AspNetApiPractice.Infrastructure.Context;
 using AspNetApiPractice.Infrastructure.Repositories;
+using AspNetApiPractice.Infrastructure.UnitOfWork;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,13 +22,21 @@ namespace AspNetApiPractice.Infrastructure
         {
             service.AddDbContext<AppDbContext>(opt =>
 
-            opt.UseSqlServer(configuration.GetConnectionString("ConnectionString"))
+            opt.UseSqlServer(configuration["ConnectionString"])
 
             );
-            service.AddSingleton<IUserRepository, UserRepository>();
-            service.AddSingleton<UserManager<User>>();
-            service.AddSingleton<IProductRepository, ProductRepository>();
-            
+
+            service.AddTransient<IUserRepository, UserRepository>();
+            service.AddTransient<UserManager<User>>();
+            service.AddTransient<IProductRepository, ProductRepository>();
+            service.AddTransient<IUnitOfWork, UnitOfWork.UnitOfWork>();
+            service.AddTransient<AppDbContext>();
+            service.AddIdentityCore<User>(opt =>
+            {
+                opt.User.RequireUniqueEmail = false;
+                opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequireUppercase = false;
+            }).AddEntityFrameworkStores<AppDbContext>();
             
         }
 

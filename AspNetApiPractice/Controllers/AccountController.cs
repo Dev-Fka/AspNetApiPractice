@@ -1,9 +1,12 @@
-﻿using AspNetApiPractice.Infrastructure.UnitOfWork;
+﻿using AspNetApiPractice.Application.Dtos;
+using AspNetApiPractice.Infrastructure.UnitOfWork;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetApiPractice.Controllers
 {
+    [ApiController]
+    [Route("/[Controller]")]
     public class AccountController : ControllerBase
     {   
         private readonly IUnitOfWork unitOfWork;
@@ -12,11 +15,11 @@ namespace AspNetApiPractice.Controllers
             this.unitOfWork = unitOfWork;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> CreateUser([FromBody] string mail,string password)
+        [HttpPost]
+        public async Task<IActionResult> CreateUser(CreateUserDto dto)
         {
 
-          return Ok(await unitOfWork.UserRepository.AddUserAsync(mail, password));
+          return Ok(await unitOfWork.UserRepository.AddUserAsync(dto.Email, dto.Password));
 
         }
     }

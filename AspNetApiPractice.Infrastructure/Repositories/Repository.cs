@@ -1,6 +1,7 @@
 ﻿using AspNetApiPractice.Application.Abstraction;
 using AspNetApiPractice.Domain.Entities;
 using AspNetApiPractice.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AspNetApiPractice.Infrastructure.Repositories
 {
-    public class Repository<T> : IRepository<T> where T : class , new()
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly AppDbContext context;
 
@@ -39,6 +40,10 @@ namespace AspNetApiPractice.Infrastructure.Repositories
 
         }
 
-        //İstenilen işlemler eklenebilir.
+        public async Task<List<T>> GetAllAsync()
+        {
+            return await context.Set<T>().ToListAsync();
+
+        }
     }
 }

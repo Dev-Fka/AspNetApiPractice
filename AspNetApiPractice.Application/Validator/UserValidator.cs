@@ -13,9 +13,9 @@ namespace AspNetApiPractice.Application.Validator
 
         public UserValidator()
         {
-            RuleFor(u=> u.FullName).NotEmpty().WithMessage("Boş bırakılamaz.");
-            RuleFor(u => u.PasswordHash).NotEmpty().WithMessage("Boş bırakılamaz.");
-            RuleFor(u => u.UserName).NotEmpty().WithMessage("Boş bırakılamaz.");
+            //RuleFor(u=> u.FullName).NotEmpty().WithMessage("Boş bırakılamaz.");
+            //RuleFor(u => u.PasswordHash).NotEmpty().WithMessage("Boş bırakılamaz.");
+            //RuleFor(u => u.UserName).NotEmpty().WithMessage("Boş bırakılamaz.");
             RuleFor(u => u.Email).NotEmpty().WithMessage("Boş bırakılamaz.");
         }
 

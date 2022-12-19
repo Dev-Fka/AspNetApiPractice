@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace AspNetApiPractice.Application.Abstraction
 {
-    public interface IRepository<T> where T: class ,new()
+    public interface IRepository<T> where T: class 
     {
 
         Task<T?> GetByIdAsync(Guid id);
         Task<T?> GetByNameAsync(string name);
         Task<bool> AddAsync(T entity);
+        Task<List<T>> GetAllAsync();
     }
 }

@@ -17,7 +17,7 @@ namespace AspNetApiPractice.Infrastructure.Context
            
 
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            optionsBuilder.UseSqlServer("Server=.;Database=AspNetPractise;Trusted_Connection=True;Encrypt=False");
+            optionsBuilder.UseSqlServer("Server=.;Database=AspNetPractise;Trusted_Connection=True;trustServerCertificate=true;Encrypt=True");
 
 
             return new AppDbContext(optionsBuilder.Options);
