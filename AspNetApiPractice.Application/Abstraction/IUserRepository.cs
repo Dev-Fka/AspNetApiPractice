@@ -1,4 +1,5 @@
-﻿using AspNetApiPractice.Domain.Entities;
+﻿using AspNetApiPractice.Application.Dtos;
+using AspNetApiPractice.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace AspNetApiPractice.Application.Abstraction
     public interface IUserRepository : IRepository<User>
     {
 
-        Task<bool> AddUserAsync(string mail ,string pass);
+        Task<bool> AddUserAsync(CreateUserDto dto);
 
     }
 }

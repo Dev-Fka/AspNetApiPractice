@@ -9,8 +9,7 @@ namespace AspNetApiPractice.Domain.Entities
 {
     public class User:IdentityUser
     {
-        public Guid UserId{ get; set; }
-        public string? FullName { get; set; }
+        public DateTime BirthDay { get; set; }
 
     }
 }

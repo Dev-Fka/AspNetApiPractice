@@ -1,8 +1,11 @@
 ﻿using AspNetApiPractice.Application.Abstraction;
+using AspNetApiPractice.Application.Dtos;
 using AspNetApiPractice.Application.Validator;
 using AspNetApiPractice.Domain.Entities;
 using AspNetApiPractice.Infrastructure.Context;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -13,7 +16,7 @@ using System.Threading.Tasks;
 namespace AspNetApiPractice.Infrastructure.Repositories
 {
     public class UserRepository : Repository<User> ,IUserRepository
-    {
+    {   
         private UserManager<User> UserManager { get; set; }
        // private SignInManager<User> signInManager { get; set; }
 
@@ -25,30 +28,30 @@ namespace AspNetApiPractice.Infrastructure.Repositories
             
         }
 
-        public async Task<bool> AddUserAsync(string mail ,string passWord)
+        public async Task<bool> AddUserAsync(CreateUserDto dto)
         {
-
-            User newUser = new()
-            {
-                Email= mail,
-                UserName = mail
-            };
 
             UserValidator validator = new();
 
-            var result = validator.Validate(newUser);
+            var result = validator.Validate(dto);
 
             if (!result.IsValid)
             {
                 foreach (var error in result.Errors)
                 {
-                    // Log.txt dosyasına yazılacak.
+                    Console.WriteLine(error.ToString());
                 }
 
                 return result.IsValid;
             }
 
-            var resNewUser = await UserManager.CreateAsync(newUser,passWord);
+            User newUser = new()
+            {
+                Email = dto.Email,
+                UserName = dto.Email
+            };
+
+            var resNewUser = await UserManager.CreateAsync(newUser,dto.Password);
 
             return resNewUser.Succeeded;
         }

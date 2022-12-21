@@ -1,4 +1,5 @@
-﻿using AspNetApiPractice.Domain.Entities;
+﻿using AspNetApiPractice.Application.Dtos;
+using AspNetApiPractice.Domain.Entities;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AspNetApiPractice.Application.Validator
 {
-    public class UserValidator :AbstractValidator<User>
+    public class UserValidator :AbstractValidator<CreateUserDto>
     {
 
         public UserValidator()
@@ -17,6 +18,7 @@ namespace AspNetApiPractice.Application.Validator
             //RuleFor(u => u.PasswordHash).NotEmpty().WithMessage("Boş bırakılamaz.");
             //RuleFor(u => u.UserName).NotEmpty().WithMessage("Boş bırakılamaz.");
             RuleFor(u => u.Email).NotEmpty().WithMessage("Boş bırakılamaz.");
+            RuleFor(u => u.Password).NotEmpty().WithMessage("Boş bırakılamaz.");
         }
 
     }

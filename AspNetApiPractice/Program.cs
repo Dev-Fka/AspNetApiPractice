@@ -1,14 +1,24 @@
 using AspNetApiPractice.Infrastructure;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+var logger = new LoggerConfiguration()
+    .WriteTo.File("Log.txt", restrictedToMinimumLevel:Serilog.Events.LogEventLevel.Error,rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructureService(builder.Configuration);
+builder.Host.UseSerilog((hostContext, services, configuration) => {
+    configuration.WriteTo.File("log.txt");
+});
 
 var app = builder.Build();
 

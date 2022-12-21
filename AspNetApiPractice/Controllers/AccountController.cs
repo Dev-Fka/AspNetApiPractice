@@ -19,7 +19,7 @@ namespace AspNetApiPractice.Controllers
         public async Task<IActionResult> CreateUser(CreateUserDto dto)
         {
 
-          return Ok(await unitOfWork.UserRepository.AddUserAsync(dto.Email, dto.Password));
+          return Ok(await unitOfWork.UserRepository.AddUserAsync(dto));
 
         }
     }

@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,13 +33,12 @@ namespace AspNetApiPractice.Infrastructure
             service.AddTransient<IProductRepository, ProductRepository>();
             service.AddTransient<IUnitOfWork, UnitOfWork.UnitOfWork>();
             service.AddTransient<AppDbContext>();
-            service.AddIdentityCore<User>(opt =>
+            service.AddIdentity<User,Roles>(opt =>
             {
-                opt.User.RequireUniqueEmail = false;
+                opt.User.RequireUniqueEmail = true;
                 opt.Password.RequireNonAlphanumeric = false;
                 opt.Password.RequireUppercase = false;
             }).AddEntityFrameworkStores<AppDbContext>();
-            
         }
 
     }

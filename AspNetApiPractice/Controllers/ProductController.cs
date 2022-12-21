@@ -8,14 +8,18 @@ namespace AspNetApiPractice.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IUnitOfWork unitOfWork;
-        public ProductController(IUnitOfWork unitOfWork)
+        private readonly ILogger<ProductController> _logger;
+        public ProductController(IUnitOfWork unitOfWork, ILogger<ProductController> logger)
         {
             this.unitOfWork = unitOfWork;
+            _logger = logger;
         }
 
         [HttpGet()]
         public async Task<IActionResult> Deneme()
         {
+            _logger.LogError("Ürünler Sorgulandı.");
+
             return Ok(await unitOfWork.ProductRepository.GetAllAsync());
         }
     }
