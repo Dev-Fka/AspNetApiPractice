@@ -20,13 +20,21 @@ namespace AspNetApiPractice.Infrastructure.Seed
 
             var manager = service.GetRequiredService<UserManager<User>>();
 
-                dbContext.Database.Migrate();
+            var roleManager = service.GetRequiredService<RoleManager<Roles>>();
 
-                if (!manager.Users.Any())
-                {
-                    manager.CreateAsync(new User() { Email = "deneme@gmail.com", UserName = "user1", } ,"Password1*");
-                }
+            dbContext.Database.Migrate();
 
+            if (!manager.Users.Any())
+            {
+            manager.CreateAsync(new User() { Email = "deneme@gmail.com", UserName = "user1", } ,"Password1*");
+            }
+
+            if (!roleManager.Roles.Any())
+            {
+
+                roleManager.CreateAsync(new Roles { Name="Admin",NormalizedName="ADMIN"});
+
+            }
         }
 
     }

@@ -12,6 +12,7 @@ namespace AspNetApiPractice.Application.Abstraction
     {
 
         Task<bool> AddUserAsync(CreateUserDto dto);
-        Task<bool> Login(string mail, string pass);
+        Task<object> Login(string mail, string pass);
+        void Logout(string mail, string pass);
     }
 }

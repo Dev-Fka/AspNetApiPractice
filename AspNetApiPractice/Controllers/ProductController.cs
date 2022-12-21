@@ -1,10 +1,13 @@
-﻿using AspNetApiPractice.Infrastructure.UnitOfWork;
+﻿using AspNetApiPractice.Domain.Entities;
+using AspNetApiPractice.Infrastructure.UnitOfWork;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetApiPractice.Controllers
 {
     [ApiController]
     [Route("/api/[Controller]")]
+    [Authorize(Roles="Admin")]
     public class ProductController : ControllerBase
     {
         private readonly IUnitOfWork unitOfWork;

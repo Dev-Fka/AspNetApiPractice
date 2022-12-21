@@ -18,6 +18,8 @@ builder.Logging.AddSerilog(logger);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructureService(builder.Configuration);
+
+
 builder.Host.UseSerilog((hostContext, services, configuration) => {
     configuration.WriteTo.File("log.txt");
 });
