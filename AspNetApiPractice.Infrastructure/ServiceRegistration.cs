@@ -36,8 +36,7 @@ namespace AspNetApiPractice.Infrastructure
             service.AddIdentity<User,Roles>(opt =>
             {
                 opt.User.RequireUniqueEmail = true;
-                opt.Password.RequireNonAlphanumeric = false;
-                opt.Password.RequireUppercase = false;
+            
             }).AddEntityFrameworkStores<AppDbContext>();
         }
 

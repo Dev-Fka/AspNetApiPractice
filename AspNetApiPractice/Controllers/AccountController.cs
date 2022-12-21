@@ -8,7 +8,7 @@ namespace AspNetApiPractice.Controllers
     [ApiController]
     [Route("/[Controller]")]
     public class AccountController : ControllerBase
-    {   
+    {
         private readonly IUnitOfWork unitOfWork;
         public AccountController(IUnitOfWork unitOfWork)
         {
@@ -19,8 +19,14 @@ namespace AspNetApiPractice.Controllers
         public async Task<IActionResult> CreateUser(CreateUserDto dto)
         {
 
-          return Ok(await unitOfWork.UserRepository.AddUserAsync(dto));
+            return Ok(await unitOfWork.UserRepository.AddUserAsync(dto));
 
+        }
+
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login(LoginDto dto)
+        {
+            return Ok(await unitOfWork.UserRepository.Login(dto.Email, dto.Password));
         }
     }
 }

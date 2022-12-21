@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AspNetApiPractice.Infrastructure.Context
 {
-    public class AppDbContext : IdentityDbContext
+    public class AppDbContext : IdentityDbContext<User,Roles,string>
     {
         public AppDbContext(DbContextOptions<AppDbContext> opt) : base(opt) { }
 
