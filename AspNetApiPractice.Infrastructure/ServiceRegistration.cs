@@ -57,7 +57,8 @@ namespace AspNetApiPractice.Infrastructure
                     ValidAudience = configuration["JWT:ValidAudience"],
                     ValidateAudience = true,
                     ValidIssuer = configuration["JWT:ValidIssuer"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"])),
+                    
                 };
             });
         }

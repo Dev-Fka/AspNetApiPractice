@@ -99,7 +99,7 @@ namespace AspNetApiPractice.Infrastructure.Repositories
                 return new
                 {
                     token = new JwtSecurityTokenHandler().WriteToken(token),
-                    expiration = token.ValidTo
+                    expiration = DateTime.Now.AddDays(1)
                 };
 
             }

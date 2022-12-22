@@ -6,8 +6,11 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
+using AspNetApiPractice.Domain.Dtos;
 
 namespace AspNetApiPractice.Application
 {   
@@ -18,7 +21,8 @@ namespace AspNetApiPractice.Application
         {
 
             services.AddValidatorsFromAssemblyContaining<UserValidator>();
-
+            services.AddValidatorsFromAssemblyContaining<ProductValidator>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
     }
 

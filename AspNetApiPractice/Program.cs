@@ -1,3 +1,5 @@
+using AspNetApiPractice.Application;
+using AspNetApiPractice.Application.ExceptionMiddleware;
 using AspNetApiPractice.Infrastructure;
 using AspNetApiPractice.Infrastructure.Seed;
 using Microsoft.Extensions.Hosting;
@@ -18,7 +20,7 @@ builder.Logging.AddSerilog(logger);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructureService(builder.Configuration);
-
+builder.Services.AddApplicationServices();
 
 builder.Host.UseSerilog((hostContext, services, configuration) => {
     configuration.WriteTo.File("log.txt");
@@ -33,7 +35,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
     SeedData.SeedingData(builder.Services.BuildServiceProvider());
-
+    app.UseMiddleware<ExceptionMiddleware>();
 }
 
 app.UseHttpsRedirection();

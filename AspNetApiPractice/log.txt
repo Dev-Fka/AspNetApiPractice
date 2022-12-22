@@ -239,3 +239,45 @@ FROM [Products] AS [p]
 2022-12-21 23:15:48.423 +03:00 [INF] Application started. Press Ctrl+C to shut down.
 2022-12-21 23:15:48.426 +03:00 [INF] Hosting environment: Development
 2022-12-21 23:15:48.426 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 14:44:51.024 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 14:44:51.030 +03:00 [INF] Hosting environment: Development
+2022-12-22 14:44:51.031 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 14:49:25.332 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 14:49:25.335 +03:00 [INF] Hosting environment: Development
+2022-12-22 14:49:25.336 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 14:54:16.028 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 14:54:16.031 +03:00 [INF] Hosting environment: Development
+2022-12-22 14:54:16.032 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 14:55:26.613 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 14:55:26.616 +03:00 [INF] Hosting environment: Development
+2022-12-22 14:55:26.617 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 15:00:49.961 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:00:49.964 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:00:49.965 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 15:02:10.739 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:02:10.743 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:02:10.743 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 15:02:39.747 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:02:39.750 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:02:39.751 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 15:04:37.582 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:04:37.586 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:04:37.586 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 15:05:41.963 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:05:41.966 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:05:41.967 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 15:06:08.705 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:06:08.709 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:06:08.709 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 15:08:31.395 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:08:31.400 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:08:31.400 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 15:12:12.019 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:12:12.023 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:12:12.023 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 15:32:43.388 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:32:43.392 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:32:43.393 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice
+2022-12-22 15:36:13.808 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:36:13.811 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:36:13.811 +03:00 [INF] Content root path: C:\Users\byart\Desktop\Projects\AspNetApiPractice\AspNetApiPractice

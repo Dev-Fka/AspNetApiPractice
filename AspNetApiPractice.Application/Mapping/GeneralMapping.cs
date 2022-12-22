@@ -1,17 +1,20 @@
 ﻿using AspNetApiPractice.Domain.Dtos;
 using AspNetApiPractice.Domain.Entities;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AspNetApiPractice.Application.Abstraction
+namespace AspNetApiPractice.Application.Mapping
 {
-    public interface IProductRepository : IRepository<Product>
+    public class GeneralMapping :Profile
     {
 
-        Task<bool> AddAsync(ProductDto dto);
+        public GeneralMapping() {
+            CreateMap<ProductDto, Product>().ReverseMap();
+        }
 
     }
 }
